@@ -45,7 +45,7 @@ if ($keyword != "") {
         SELECT * FROM buku 
         WHERE judul_buku LIKE '%$keyword%'
         AND status IN ('tersedia','dipinjam')
-        ORDER BY id_buku ASC
+        ORDER BY id_buku DESC
         LIMIT $start, $limit
     ");
 } else {

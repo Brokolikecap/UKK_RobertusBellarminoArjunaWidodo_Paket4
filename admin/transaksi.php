@@ -59,7 +59,7 @@ if (!empty($keyword)) {
 }
 
 /* ================= URUTKAN DATA PALING LAMA DULU ================= */
-$query .= " ORDER BY transaksi.id_transaksi ASC LIMIT $start, $limit";
+$query .= " ORDER BY transaksi.id_transaksi DESC LIMIT $start, $limit";
 
 $result = mysqli_query($koneksi, $query);
 ?>

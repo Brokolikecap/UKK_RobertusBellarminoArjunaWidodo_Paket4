@@ -38,7 +38,7 @@ if ($keyword != '') {
     $data = mysqli_query($koneksi, "
         SELECT * FROM buku
         WHERE judul_buku LIKE '%$keyword%'
-        ORDER BY id_buku ASC
+        ORDER BY id_buku DESC
         LIMIT $start, $limit
     ");
 } else {
