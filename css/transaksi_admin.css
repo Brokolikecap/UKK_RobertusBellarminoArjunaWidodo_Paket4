@@ -1,0 +1,486 @@
+/* Import Font Lato & Playfair Display */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap");
+
+/* =========================================
+   1. VARIABLES (SAMA PERSIS DENGAN REFERENSI)
+   ========================================= */
+:root {
+  /* Palette Warna Mewah */
+  --primary-color: #1e3a8a; /* Royal Blue */
+  --primary-dark: #0f172a; /* Darker Navy */
+  --accent-color: #fbbf24; /* Gold Accent */
+
+  /* Warna Background */
+  --bg-body: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+  --bg-card: rgba(255, 255, 255, 0.96);
+  --bg-header: #f8fafc;
+
+  /* Warna Teks */
+  --text-main: #1f2937;
+  --text-muted: #64748b;
+
+  /* Border & Shadow */
+  --border-color: #e2e8f0;
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+  /* Status Colors */
+  --success-bg: #dcfce7;
+  --success-text: #166534;
+
+  --warning-bg: #fee2e2;
+  --warning-text: #991b1b;
+
+  --radius-md: 6px;
+  --radius-lg: 12px;
+}
+
+/* =========================================
+   2. RESET & BASIC SETUP
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Font Premium */
+  font-family: "Lato", sans-serif;
+  background: var(--bg-body); /* Gradient Royal Blue - Navy */
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 40px 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Scroll dari atas */
+}
+
+/* =========================================
+   3. CONTAINER UTAMA ADMIN
+   ========================================= */
+.container-admin {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
+  background-color: var(--bg-card);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hiasan Garis Emas */
+.container-admin::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, #b45309, #fbbf24, #b45309);
+}
+
+/* =========================================
+   4. HEADER ADMIN
+   ========================================= */
+.header-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: transparent;
+}
+
+.header-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.admin-icon {
+  color: #b45309;
+  opacity: 0.8;
+}
+
+/* =========================================
+   5. AREA TABEL
+   ========================================= */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+thead {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+th {
+  text-align: left;
+  padding: 1rem;
+  font-weight: 700;
+  color: #fbbf24;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-main);
+  vertical-align: middle;
+  background-color: #fff;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* =========================================
+   6. KOLOM SPESIFIK
+   ========================================= */
+.user-name {
+  font-weight: 700;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-icon {
+  background: #e0e7ff;
+  color: var(--primary-color);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.book-title {
+  font-style: italic;
+  color: var(--text-main);
+}
+
+/* =========================================
+   7. STATUS BADGE
+   ========================================= */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.status-borrowed {
+  background-color: var(--warning-bg);
+  color: var(--warning-text);
+  border: 1px solid #fecaca;
+}
+
+.status-returned {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid #bbf7d0;
+}
+
+.status-pending {
+  background-color: #fff7ed;
+  color: #9a3412;
+  border: 1px solid #fed7aa;
+}
+
+/* =========================================
+   8. TOMBOL KEMBALI
+   ========================================= */
+.back-link-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  gap: 8px;
+}
+
+.btn-back:hover {
+  color: #fff;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  padding-left: 1.8rem;
+}
+
+.btn-back .arrow {
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+}
+
+.btn-back:hover .arrow {
+  transform: translateX(-4px);
+}
+
+/* =========================================
+   9. RESPONSIVE MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  .container-admin {
+    padding: 1.5rem;
+    border-radius: 0;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .header-admin {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .table-wrapper {
+    padding: 0;
+    border-radius: var(--radius-md);
+  }
+
+  th,
+  td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-back {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+}
+
+/* =========================================
+   10. TOMBOL AKSI (SETUJUI / TOLAK)
+   ========================================= */
+
+/* Kontainer pembungkus tombol agar rapi */
+.action-buttons {
+  display: flex;
+  gap: 8px; /* Jarak antar tombol */
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* Style dasar untuk tombol aksi */
+.btn-action {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 50px; /* Bentuk pill/kapsul seperti badge */
+  font-size: 0.75rem; /* Ukuran font sama dengan badge */
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap; /* Agar teks tidak turun ke bawah */
+}
+
+/* Tombol Setujui (Hijau) */
+.btn-approve {
+  background-color: var(
+    --success-bg
+  ); /* Menggunakan variabel yang ada: #dcfce7 */
+  color: var(--success-text); /* Menggunakan variabel yang ada: #166534 */
+  border-color: #bbf7d0;
+}
+
+.btn-approve:hover {
+  background-color: #166534; /* Hijau gelap saat hover */
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(22, 101, 52, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Tombol Tolak (Merah) */
+.btn-reject {
+  background-color: var(
+    --warning-bg
+  ); /* Menggunakan variabel yang ada: #fee2e2 */
+  color: var(--warning-text); /* Menggunakan variabel yang ada: #991b1b */
+  border-color: #fecaca;
+}
+
+.btn-reject:hover {
+  background-color: #991b1b; /* Merah gelap saat hover */
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(153, 27, 27, 0.3);
+  transform: translateY(-1px);
+}
+
+.search-container {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  display: flex;
+}
+
+.search-input-wrapper {
+  display: flex;
+  width: 300px;
+
+  border-radius: var(--radius-md);
+  overflow: hidden;
+
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+
+  transition: border-color 0.3s ease;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: var(--primary-color);
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 15px;
+
+  border: none;
+  outline: none;
+
+  font-size: 0.9rem;
+  font-family: "Lato", sans-serif;
+  color: var(--text-main);
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
+.search-btn {
+  padding: 0 20px;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  border: none;
+  cursor: pointer;
+
+  background-color: var(--primary-color);
+  color: #fff;
+
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #172554;
+}
+
+/* ================= PAGINATION ================= */
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination a,
+.pagination strong {
+  display: inline-block;
+  margin: 0 4px;
+  padding: 8px 14px;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  border-radius: var(--radius-md);
+  border: 1px solid var(--primary-color);
+
+  transition: all 0.3s ease;
+}
+
+/* tombol biasa */
+.pagination a {
+  color: var(--primary-color);
+  background: #fff;
+}
+
+/* hover */
+.pagination a:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* halaman aktif */
+.pagination strong {
+  background: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}

@@ -1,0 +1,273 @@
+/* Import Font Premium: Playfair Display & Lato */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap");
+:root {
+  --primary-color: #1e3a8a; /* Royal Blue */
+  --primary-dark: #0f172a; /* Dark Navy */
+  --accent-color: #fbbf24; /* Gold */
+  --accent-gradient: linear-gradient(90deg, #b45309, #fbbf24, #b45309);
+  --text-main: #1f2937;
+  --text-muted: #64748b;
+  --bg-body: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+  --bg-glass: rgba(255, 255, 255, 0.95);
+  --shadow-soft:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-deep:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --radius-card: 12px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif; /* Font utama isi */
+}
+body {
+  background: var(--bg-body); /* Background Gradasi Gelap */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-main);
+} /* --- NAVBAR --- */
+.navbar {
+  background-color: var(--bg-glass);
+  height: 80px; /* Sedikit lebih tinggi untuk kesan elegan */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-shadow: var(--shadow-soft);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Efek blur modern */
+  backdrop-filter: blur(10px);
+}
+.navbar-brand {
+  font-family: "Playfair Display", serif; /* Font Judul Mewah */
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: transform 0.3s;
+}
+.navbar-brand:hover {
+  transform: scale(1.02);
+}
+.navbar-brand .brand-highlight {
+  color: var(--accent-color); /* Aksen Emas */
+}
+.navbar-menu {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+.navbar-menu li a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+} /* Hover & Active State */
+.navbar-menu li a:hover,
+.navbar-menu li a.active {
+  color: var(--primary-color);
+} /* Garis Bawah Emas saat Hover */
+.navbar-menu li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -6px;
+  left: 50%;
+  background-color: var(--accent-color);
+  transition: all 0.3s;
+  transform: translateX(-50%);
+}
+.navbar-menu li a:hover::after,
+.navbar-menu li a.active::after {
+  width: 100%;
+}
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.user-info-text {
+  text-align: right;
+}
+.username {
+  display: block;
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-size: 15px;
+}
+.userrole {
+  display: block;
+  font-size: 12px;
+  color: var(--accent-color); /* Role berwarna emas */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn-logout {
+  padding: 8px 24px;
+  background-color: #ef4444; /* Merah yang lebih elegan */
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+}
+.btn-logout:hover {
+  background-color: #dc2626;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+  transform: translateY(-2px);
+} /* --- KONTEN UTAMA --- */
+.main-content {
+  flex: 1;
+  padding: 50px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+} /* Styling Kartu Selamat Datang */
+.welcome-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-deep);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+} /* Garis emas di atas kartu welcome */
+.welcome-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--accent-gradient);
+}
+.welcome-card h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+.welcome-card p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.welcome-card strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+.desc-text {
+  max-width: 800px;
+} /* Grid Placeholder */ /* --- STYLE BERSIH & MEWAH (CLEAN LUXURY) --- */
+.grid-placeholder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 10px;
+}
+.mini-card {
+  /* 1. Background Putih Solid */
+  background: #ffffff; /* 2. Sudut Melengkung Halus */
+  border-radius: 14px; /* 3. Padding Lega agar tidak sesak */
+  padding: 12px 15px; /* 4. Border Tipis Emas (Sangat Penting untuk kesan mewah) */
+  border: 1px solid rgba(251, 191, 36, 0.3); /* Warna emas transparan */ /* 5. Bayangan Dalam & Lembut (Deep Soft Shadow) */
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.025);
+  transition: all 0.3s ease;
+  position: relative;
+} /* Efek Hover: Kartu Naik + Bayangan Emas */
+.mini-card:hover {
+  transform: translateY(-5px); /* Border jadi emas solid saat di-hover */
+  border-color: rgba(
+    251,
+    191,
+    36,
+    0.8
+  ); /* Bayangan semakin dalam dan ada glow emas tipis */
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.05),
+    0 10px 10px -5px rgba(0, 0, 0, 0.02),
+    0 0 0 4px rgba(251, 191, 36, 0.05); /* Halo emas tipis di luar */
+} /* --- Tipografi --- */
+.mini-card h3 {
+  font-family: "Lato", sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #94a3b8; /* Abu-abu elegan, bukan hitam pekat */
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.mini-card p {
+  font-family: "Lato", sans-serif;
+  color: #475569;
+  font-size: 1rem;
+  margin-top: -10px; /* Rapatkan jarak ke angka */
+} /* Angka Besar */
+.mini-card p strong {
+  display: block; /* Font Serif Emas */
+  font-family: "Playfair Display", serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #1e3a8a; /* Warna Royal Blue Solid */
+  line-height: 1;
+  margin-bottom: 5px;
+} /* Dekorasi Kecil: Titik Emas di pojok */
+.mini-card::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 6px;
+  height: 6px;
+  background-color: #fbbf24; /* Emas Solid */
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fbbf24; /* Efek glow titik */
+} /* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+    height: 70px;
+  }
+  .grid-placeholder {
+    grid-template-columns: 1fr; /* Stack vertikal di HP */
+    gap: 20px;
+  }
+  .mini-card p strong {
+    font-size: 2.5rem;
+  }
+  .navbar-menu {
+    display: none; /* Menu disembunyikan di mobile (bisa diganti hamburger menu nanti) */
+  }
+  .user-info-text {
+    display: none;
+  }
+  .navbar-brand {
+    font-size: 22px;
+  }
+  .main-content {
+    padding: 20px;
+  }
+  .welcome-card h1 {
+    font-size: 1.8rem;
+  }
+}

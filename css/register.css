@@ -1,0 +1,178 @@
+/* Import Font Google untuk tampilan yang elegan */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  /* Latar belakang gradasi modern (Consisten dengan Login) */
+  background: linear-gradient(135deg, #054ca9 0%, #04b3f3 100%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container Kartu Register */
+.login-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  backdrop-filter: blur(10px); /* Efek kaca */
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Judul Register */
+.login-container h2 {
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Styling Form Group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Styling Input Text & Password */
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: #054ca9;
+  box-shadow: 0 0 0 3px rgba(29, 126, 183, 0.1);
+}
+
+/* Styling Tombol Register */
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #054ca9 0%, #04b3f3 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(12, 151, 231, 0.4);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* Alert Error (Merah) */
+.alert-error {
+  background-color: #ffeaea;
+  color: #d63031;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  border-left: 4px solid #d63031;
+  text-align: left;
+  animation: shake 0.4s ease-in-out;
+}
+
+/* Alert Success (Hijau) */
+.alert-success {
+  background-color: #e8f8f5;
+  color: #00b894;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  border-left: 4px solid #00b894;
+  text-align: left;
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Link di bawah form (Login Redirect) */
+.text-center {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.text-center a {
+  color: #054ca9;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.text-center a:hover {
+  color: #04b3f3;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 480px) {
+  .login-container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
